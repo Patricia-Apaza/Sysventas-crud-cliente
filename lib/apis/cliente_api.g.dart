@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'producto_api.dart';
+part of 'cliente_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'producto_api.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
-class _ProductoApi implements ProductoApi {
-  _ProductoApi(
+class _ClienteApi implements ClienteApi {
+  _ClienteApi(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -24,20 +24,20 @@ class _ProductoApi implements ProductoApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ProductoResp>> getProducto(String token) async {
+  Future<List<ClienteResp>> getCliente(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ProductoResp>>(Options(
+    final _options = _setStreamType<List<ClienteResp>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/productos',
+          '/clientes',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -47,10 +47,10 @@ class _ProductoApi implements ProductoApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ProductoResp> _value;
+    late List<ClienteResp> _value;
     try {
       _value = _result.data!
-          .map((dynamic i) => ProductoResp.fromJson(i as Map<String, dynamic>))
+          .map((dynamic i) => ClienteResp.fromJson(i as Map<String, dynamic>))
           .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -60,16 +60,16 @@ class _ProductoApi implements ProductoApi {
   }
 
   @override
-  Future<Message> crearProducto(
+  Future<Message> crearCliente(
     String token,
-    ProductoDto producto,
+    ClienteDto cliente,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
-    _data.addAll(producto.toJson());
+    _data.addAll(cliente.toJson());
     final _options = _setStreamType<Message>(Options(
       method: 'POST',
       headers: _headers,
@@ -77,7 +77,7 @@ class _ProductoApi implements ProductoApi {
     )
         .compose(
           _dio.options,
-          '/productos',
+          '/clientes',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -98,23 +98,23 @@ class _ProductoApi implements ProductoApi {
   }
 
   @override
-  Future<ProductoResp> findProducto(
+  Future<ClienteResp> findCliente(
     String token,
-    int id,
+    String id,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ProductoResp>(Options(
+    final _options = _setStreamType<ClienteResp>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/productos/${id}',
+          '/clientes/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -124,9 +124,9 @@ class _ProductoApi implements ProductoApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ProductoResp _value;
+    late ClienteResp _value;
     try {
-      _value = ProductoResp.fromJson(_result.data!);
+      _value = ClienteResp.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -135,9 +135,9 @@ class _ProductoApi implements ProductoApi {
   }
 
   @override
-  Future<Message> deleteProducto(
+  Future<Message> deleteCliente(
     String token,
-    int id,
+    String id,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -151,7 +151,7 @@ class _ProductoApi implements ProductoApi {
     )
         .compose(
           _dio.options,
-          '/productos/${id}',
+          '/clientes/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -172,25 +172,25 @@ class _ProductoApi implements ProductoApi {
   }
 
   @override
-  Future<ProductoResp> updateProducto(
+  Future<ClienteResp> updateCliente(
     String token,
-    int id,
-    ProductoDto producto,
+    String id,
+    ClienteDto cliente,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
-    _data.addAll(producto.toJson());
-    final _options = _setStreamType<ProductoResp>(Options(
+    _data.addAll(cliente.toJson());
+    final _options = _setStreamType<ClienteResp>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          '/productos/${id}',
+          '/clientes/${id}',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -200,9 +200,9 @@ class _ProductoApi implements ProductoApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ProductoResp _value;
+    late ClienteResp _value;
     try {
-      _value = ProductoResp.fromJson(_result.data!);
+      _value = ClienteResp.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -1,6 +1,7 @@
 import 'package:sysventas/theme/AppTheme.dart';
 import 'package:sysventas/drawer/drawer_user_controller.dart';
 import 'package:sysventas/drawer/home_drawer.dart';
+import 'package:sysventas/ui/cliente/cliente_main.dart';
 import 'package:sysventas/ui/help_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sysventas/ui/producto/producto_main.dart';
@@ -58,6 +59,10 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       } else if (drawerIndex == DrawerIndex.FeedBack) {
         setState(() {
           screenView = MainProducto();
+        });
+      } else if (drawerIndex == DrawerIndex.Cliente) {
+        setState(() {
+          screenView = MainCliente();
         });
       } else if (drawerIndex == DrawerIndex.Imagex) {
         setState(() {

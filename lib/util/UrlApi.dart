@@ -1,5 +1,5 @@
 
 class UrlApi{
   UrlApi._();
-  static const String urlApix="http://192.168.1.4:8080";
+  static const String urlApix="http://192.168.1.2:8080";
 }
